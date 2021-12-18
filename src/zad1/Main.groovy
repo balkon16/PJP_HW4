@@ -12,6 +12,7 @@ static getCharactersCount(String word) {
     return res
 }
 
+
 def data = new URL('http://wiki.puzzlers.org/pub/wordlists/unixdict.txt').getText().split("\n").collect { it.trim() }
 
 //data = ["hello",  "abc", "heoll", "def", "olehl"]
@@ -35,19 +36,10 @@ res.each {
             anagramMap[it] = anagrams.toSet().minus(it)
         }
 }
-//println(anagramMap)
-//def comp = [ compare: { o1, o2 -> ... } ] as Comparator
-// TODO: dla słów o takiej samej liczbie anagramów kolejność alfabetyczna -> Comparator
-def comp = [compare: { a1, a2 -> a1.value.size() - a2.value.size() } ] as Comparator
 
 anagramMap
-//        .sort(comp)
+        .findAll {it.value.size() > 0}
         .sort { a1, a2 ->
-            // TODO: to porównanie jest do kitu
-            a1.value.size() == a2.value.size() ? (a1.key > a2.key) <=> false : a2.value.size() - a1.value.size() }
-//        .sort { comp}
-//        .sort {it.key}
-        .each { println("$it.key: $it.value") }
-
-
-//print(getCharactersCount("hello!"))
+            a1.value.size() == a2.value.size() ? a1.key.compareTo(a2.key) : a2.value.size() - a1.value.size()
+        }
+        .each { println("$it.key: ${it.value.join(" ")}") }
