@@ -38,7 +38,7 @@ res.each {
 }
 
 anagramMap
-        .findAll {it.value.size() > 0}
+        .findAll { it.value.size() > 0 }
         .sort { a1, a2 ->
             a1.value.size() == a2.value.size() ? a1.key.compareTo(a2.key) : a2.value.size() - a1.value.size()
         }
