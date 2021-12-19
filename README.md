@@ -22,5 +22,5 @@ The input data is printed in various ways:
 are the same, the order is decided by the client ID (in ascending order as well).
 * The excerpt preceded by *Koszty* (Polish for costs) contains data sorted by the total cost in a line (in descending order). In a case
 of a conflict the order is decided by the client ID (in ascending order).
-* The excerpt preceded by *Klient c00001" (Polish *Klient* stands for Client) contains all items bought by the client with ID *c00001*.
-* The excerpt preceded by *Klient c00002" contains all items bought by the client with ID *c00002*.
+* The excerpt preceded by "Klient c00001" (Polish *Klient* stands for Client) contains all items bought by the client with ID *c00001*.
+* The excerpt preceded by "Klient c00002" contains all items bought by the client with ID *c00002*.
