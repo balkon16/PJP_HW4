@@ -16,3 +16,4 @@ new URL('http://wiki.puzzlers.org/pub/wordlists/unixdict.txt').getText().split("
         .sort { a1, a2 ->
             a1.value.size() == a2.value.size() ? a1.key.compareTo(a2.key) : a2.value.size() - a1.value.size() }
         .each { println("$it.key: ${it.value.join(' ')}") }
+
